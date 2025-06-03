@@ -1,9 +1,0 @@
-services:
-  - type: web
-    name: accounting-backend
-    env: node
-    buildCommand: npm install
-    startCommand: node server.js
-    envVars:
-      - key: MONGO_URI
-        value: mongodb+srv://adittan:12345@cluster0.8qfpesi.mongodb.net/AccountingSystem?retryWrites=true&w=majority
