@@ -1,5 +1,5 @@
 // models/Invoice.js
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
 const invoiceSchema = new mongoose.Schema({
   client: { type: String, required: true },
@@ -11,4 +11,4 @@ const invoiceSchema = new mongoose.Schema({
   timestamps: true
 });
 
-export default mongoose.model('Invoice', invoiceSchema);
+module.exports = mongoose.model('Invoice', invoiceSchema);
