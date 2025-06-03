@@ -1,6 +1,6 @@
 // controllers/transactionController.js
-import Transaction from '../models/TransactionModal.js';
 
+const Transaction = require('../models/TransactionModal.js');
 // Create a new transaction
 export const createTransaction = async (req, res) => {
   try {
