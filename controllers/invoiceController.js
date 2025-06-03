@@ -1,7 +1,7 @@
 const Invoice = require('../models/Invoice.js');
 
 // Create new invoice
-export const createInvoice = async (req, res) => {
+const createInvoice = async (req, res) => {
   const { client, amount, description, date, invoiceNumber } = req.body;
 
   // Basic validation
@@ -25,7 +25,7 @@ export const createInvoice = async (req, res) => {
 };
 
 // Update existing invoice
-export const updateInvoice = async (req, res) => {
+const updateInvoice = async (req, res) => {
   const { id } = req.params;
   try {
     const updatedInvoice = await Invoice.findByIdAndUpdate(id, req.body, {
@@ -42,4 +42,10 @@ export const updateInvoice = async (req, res) => {
     console.error('Error updating invoice:', error);
     res.status(500).json({ message: 'Failed to update invoice', error: error.message });
   }
+};
+
+// Export controller functions
+module.exports = {
+  createInvoice,
+  updateInvoice,
 };
