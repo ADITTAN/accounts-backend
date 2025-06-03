@@ -1,4 +1,4 @@
-import Invoice from '../models/Invoice.js';
+const Invoice = require('../models/Invoice.js');
 
 // Create new invoice
 export const createInvoice = async (req, res) => {
