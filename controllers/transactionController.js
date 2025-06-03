@@ -1,8 +1,7 @@
-// controllers/transactionController.js
-
 const Transaction = require('../models/TransactionModal.js');
+
 // Create a new transaction
-export const createTransaction = async (req, res) => {
+const createTransaction = async (req, res) => {
   try {
     const newTransaction = new Transaction(req.body);
     const saved = await newTransaction.save();
@@ -13,7 +12,7 @@ export const createTransaction = async (req, res) => {
 };
 
 // Get all transactions
-export const getTransactions = async (req, res) => {
+const getTransactions = async (req, res) => {
   try {
     const transactions = await Transaction.find().sort({ date: -1 });
     res.status(200).json(transactions);
@@ -23,7 +22,7 @@ export const getTransactions = async (req, res) => {
 };
 
 // Get a single transaction
-export const getTransactionById = async (req, res) => {
+const getTransactionById = async (req, res) => {
   try {
     const transaction = await Transaction.findById(req.params.id);
     if (!transaction) return res.status(404).json({ message: 'Transaction not found' });
@@ -34,7 +33,7 @@ export const getTransactionById = async (req, res) => {
 };
 
 // Update a transaction
-export const updateTransaction = async (req, res) => {
+const updateTransaction = async (req, res) => {
   try {
     const updated = await Transaction.findByIdAndUpdate(req.params.id, req.body, { new: true });
     if (!updated) return res.status(404).json({ message: 'Transaction not found' });
@@ -45,7 +44,7 @@ export const updateTransaction = async (req, res) => {
 };
 
 // Delete a transaction
-export const deleteTransaction = async (req, res) => {
+const deleteTransaction = async (req, res) => {
   try {
     const deleted = await Transaction.findByIdAndDelete(req.params.id);
     if (!deleted) return res.status(404).json({ message: 'Transaction not found' });
@@ -53,4 +52,13 @@ export const deleteTransaction = async (req, res) => {
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
+};
+
+// Export controller functions
+module.exports = {
+  createTransaction,
+  getTransactions,
+  getTransactionById,
+  updateTransaction,
+  deleteTransaction,
 };
