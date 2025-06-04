@@ -18,6 +18,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.use(cors({
+  origin: 'https://accounts-frontend-phi.vercel.app/', // your Vercel domain
+  credentials: true,
+}));
+
 app.use('/api/user', userRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/invoices', invoiceRoutes);
