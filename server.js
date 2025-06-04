@@ -19,7 +19,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use(cors({
-  origin: 'https://accounts-frontend-7if5x6kb5-adittans-projects.vercel.app/', // your Vercel domain
+  origin: 'https://accounts-frontend-7if5x6kb5-adittans-projects.vercel.app', // your Vercel domain
   credentials: true,
 }));
 
