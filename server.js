@@ -30,6 +30,12 @@ app.use('/api/expenses', expenseRoutes);
 app.use('/api/transactions', transactionRoutes);
 app.use('/api/reports', reportRoutes);
 
+// Optional health check route
+app.get('/', (req, res) => {
+  res.send('✅ Backend is running on Railway!');
+});
+
+
 mongoose
   .connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
