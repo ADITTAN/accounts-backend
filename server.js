@@ -19,7 +19,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use(cors({
-  origin: 'https://accounts-frontend-aww3c7gs8-adittans-projects.vercel.app', // your Vercel domain
+  origin: 'http://localhost:3000', // your Vercel domain
   credentials: true,
 }));
 
