@@ -4,7 +4,7 @@ const router = express.Router();
 const Transaction = require('../models/TransactionModal');
 const { default: TransactionModal } = require('../models/TransactionModal');
 
-router.get('/custom', async (req, res) => {
+router.get('/', async (req, res) => {
     const { from, to } = req.query;
     console.log(`Generating report from ${from} to ${to}`);
     try {
