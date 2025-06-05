@@ -19,7 +19,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use(cors({
-  origin: 'http://localhost:3000', // your Vercel domain
+  origin: 'http://192.168.1.38:3000', // your Vercel domain
   credentials: true,
 }));
 
