@@ -19,7 +19,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use(cors({
-  origin: 'http://192.168.242.46:3000', // your Vercel domain
+  origin: 'https://cerulean-vacherin-ce46b9.netlify.app', // your Vercel domain
   credentials: true,
 }));
 
